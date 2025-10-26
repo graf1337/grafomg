@@ -1,0 +1,66 @@
+public class MergeSort {
+    // Основной метод сортировки
+    public static int[] mergeSort(int[] arr) {
+        // Базовый случай: массив длиной 0 или 1 уже отсортирован
+        if (arr.length <= 1)
+            return arr;
+
+        // Находим середину массива
+        int mid = arr.length / 2;
+
+        // Делим массив на две части
+        int[] left = new int[mid];
+        int[] right = new int[arr.length - mid];
+        System.arraycopy(arr, 0, left, 0, mid);
+        System.arraycopy(arr, mid, right, 0, arr.length - mid);
+
+        // Рекурсивно сортируем каждую часть
+        left = mergeSort(left);
+        right = mergeSort(right);
+
+        // Сливаем отсортированные части
+        return merge(left, right);
+    }
+
+    // Метод слияния двух отсортированных подмассивов
+    public static int[] merge(int[] left, int[] right) {
+        int[] result = new int[left.length + right.length];
+        int i = 0, j = 0, k = 0;
+
+        // Пока есть элементы в обоих массивах
+        while (i < left.length && j < right.length) {
+            if (left[i] < right[j]) {
+                result[k++] = left[i++];
+            } else {
+                result[k++] = right[j++];
+            }
+        }
+
+        // Добавляем оставшиеся элементы
+        while (i < left.length) {
+            result[k++] = left[i++];
+        }
+        while (j < right.length) {
+            result[k++] = right[j++];
+        }
+        return result;
+    }
+
+    // Вспомогательный метод для вывода массива
+    public static void printArray(int[] arr) {
+        for (int value : arr)
+            System.out.print(value + " ");
+        System.out.println();
+    }
+
+    // Пример использования
+    public static void main(String[] args) {
+        int[] array = {38, 27, 43, 3, 9, 82, 10};
+        System.out.print("Исходный массив: ");
+        printArray(array);
+
+        int[] sortedArray = mergeSort(array);
+        System.out.print("Отсортированный массив: ");
+        printArray(sortedArray);
+    }
+}
