@@ -1,0 +1,35 @@
+def quick_sort(arr, low, high):
+    if low < high:
+        # pi - это индекс разбиения; arr[pi] находится на своем месте
+        pi = partition(arr, low, high)
+        # Отсортировать элементы до и после разбиения
+        quick_sort(arr, low, pi - 1)
+        quick_sort(arr, pi + 1, high)
+
+def partition(arr, low, high):
+    # Выбираем последний элемент в качестве опорного
+    pivot = arr[high]
+    i = low - 1  # Индекс меньшего элемента
+
+    for j in range(low, high):
+        # Если текущий элемент меньше или равен опорному
+        if arr[j] <= pivot:
+            i += 1
+            # Поменять местами arr[i] и arr[j]
+            arr[i], arr[j] = arr[j], arr[i]
+    # Поменять местами arr[i + 1] и arr[high] (опорный элемент)
+    arr[i + 1], arr[high] = arr[high], arr[i + 1]
+    return i + 1
+
+def print_array(arr):
+    for value in arr:
+        print(value, end=' ')
+    print()
+
+if __name__ == "__main__":
+    array = [10, 7, 8, 9, 1, 5]
+    print("Исходный массив:")
+    print_array(array)
+    quick_sort(array, 0, len(array) - 1)
+    print("\nОтсортированный массив:")
+    print_array(array)
