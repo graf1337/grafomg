@@ -1,0 +1,19 @@
+def exponential_search(arr, x):
+    if arr[0] == x:
+        return 0
+    i = 1
+    n = len(arr)
+    while i < n and arr[i] <= x:
+        i *= 2
+    low = i // 2
+    high = min(i, n-1)
+    # Дальше обычный бинарный поиск
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == x:
+            return mid
+        elif arr[mid] < x:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
