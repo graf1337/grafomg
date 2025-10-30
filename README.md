@@ -27,6 +27,7 @@ result = []
 for bucket in buckets:
     result.extend(bucket)
 return result
+<img width="575" height="641" alt="image" src="https://github.com/user-attachments/assets/685e1fad-0b4b-4ded-bbab-37199d1e8ae1" />
 Особенности:
 Эффективна для равномерно распределённых числовых данных и может достигать линейной
 асимптотики O(n), если размер корзин выбран удачно. Однако эффективность сильно падает
