@@ -27,7 +27,7 @@ result = []
 for bucket in buckets:
     result.extend(bucket)
 return result
-<img width="575" height="641" alt="image" src="https://github.com/user-attachments/assets/685e1fad-0b4b-4ded-bbab-37199d1e8ae1" />
+<img width="475" height="595" alt="image" src="https://github.com/user-attachments/assets/ed7c07a7-7d33-4d24-a9fe-46f97be23a71" />
 Особенности:
 Эффективна для равномерно распределённых числовых данных и может достигать линейной
 асимптотики O(n), если размер корзин выбран удачно. Однако эффективность сильно падает
@@ -56,7 +56,7 @@ flip(arr, max_idx + 1)
 flip(arr, size)
 4. Повторить процесс для оставшейся неотсортированной части массива.
 for size in range(n, 1, -1)
-<img width="572" height="638" alt="image" src="https://github.com/user-attachments/assets/26308431-ed8b-469d-b659-c0a070515f55" />
+<img width="464" height="574" alt="image" src="https://github.com/user-attachments/assets/135b1a29-f2df-47e0-97d6-33e7cac8a996" />
 Особенности:
 Сложность алгоритма — O(n2). Он интересен теоретически и используется как пример
 нестандартных методов сортировки.
@@ -92,7 +92,7 @@ for j in range(max(arr)):
 4. После оседания бусин строки считываются сверху вниз — получается
 отсортированный массив.
 return [row.count(i) for row in beads]
-<img width="524" height="576" alt="image" src="https://github.com/user-attachments/assets/81e035df-3eb8-473a-bc1e-60c75ded6ac1" />
+<img width="503" height="523" alt="image" src="https://github.com/user-attachments/assets/1657ef74-a693-4d87-a42b-2957529275a5" />
 Особенности:
 Алгоритм применим только для неотрицательных целых чисел. Теоретическая сложность —
 O(n), но практическая — выше из-за ограничения на диапазон и реализацию.
@@ -130,7 +130,7 @@ while arr[prev] < x:
 if arr[prev] == x:
     return prev
 return -1
-<img width="524" height="543" alt="image" src="https://github.com/user-attachments/assets/30a946a4-99fb-4e71-9a48-c13e33ec2ec8" />
+<img width="478" height="581" alt="image" src="https://github.com/user-attachments/assets/4632a276-88b3-47d3-9d55-9bd3e67aafc1" />
 Особенности:
 В среднем сложность поиска O(n).
 Оптимален, когда данные отсортированы и доступ к элементам осуществляется за постоянное
@@ -170,7 +170,7 @@ while low <= high:
     else:
         high = mid - 1
 return -1
-<img width="525" height="556" alt="image" src="https://github.com/user-attachments/assets/21c2d5c5-6fea-45f3-a40f-2a6a56696bee" />
+<img width="409" height="505" alt="image" src="https://github.com/user-attachments/assets/53070e20-bb08-4f3c-b6a6-75c8273af591" />
 Особенности:
 Сложность O(log⁡n). Эффективен при поиске в очень больших отсортированных массивах с
 неизвестным размером или частичным доступом.
@@ -204,7 +204,7 @@ elif x > arr[mid2]:
     return ternary_search(arr, mid2 + 1, r, x)
 else:
     return ternary_search(arr, mid1 + 1, mid2 - 1, x)
-<img width="529" height="575" alt="image" src="https://github.com/user-attachments/assets/e2072624-7ac3-4166-9e1f-335118dcede4" />
+<img width="409" height="504" alt="image" src="https://github.com/user-attachments/assets/17a04f18-8aa2-400e-9495-8f11eb464ec6" />
 Особенности:
 Сложность также O(log⁡n), но число сравнений на шаг выше, чем в двоичном поиске.
 Помимо массивов, тернарный поиск часто используется для нахождения минимума или
