@@ -1,0 +1,14 @@
+def bead_sort(arr):
+    if any(x < 0 for x in arr):
+        raise ValueError("Bead sort only works with non-negative integers")
+    beads = [[0] * max(arr) for _ in range(len(arr))]
+    for i, val in enumerate(arr):
+        for j in range(val):
+            beads[i][j] = 1
+    for j in range(max(arr)):
+        sum_ = sum(beads[i][j] for i in range(len(arr)))
+        for i in range(len(arr) - 1, len(arr) - sum_ - 1, -1):
+            beads[i][j] = 1
+        for i in range(len(arr) - sum_ - 1, -1, -1):
+            beads[i][j] = 0
+    return [row.count(1) for row in beads]
