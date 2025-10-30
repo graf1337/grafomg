@@ -1,0 +1,11 @@
+def bucket_sort(arr):
+    buckets = [[] for _ in range(len(arr))]
+    for val in arr:
+        index = int(val * len(arr))
+        buckets[index].append(val)
+    for bucket in buckets:
+        bucket.sort()
+    result = []
+    for bucket in buckets:
+        result.extend(bucket)
+    return result
