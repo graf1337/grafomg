@@ -49,10 +49,7 @@ def bead_sort(arr):
         for i in range(len(arr) - sum_ - 1, -1, -1):
             beads[i][j] = 0
     return [row.count(1) for row in beads]
-
 arr = [5, 3, 1, 7, 4]
 print("Исходный массив:", arr)
 sorted_arr = bead_sort(arr)
 print("Отсортированный массив:", sorted_arr)
-
-
