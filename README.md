@@ -55,7 +55,8 @@ flip(arr, max_idx + 1)
 3. Перевернуть весь подмассив, чтобы максимальный элемент оказался в конце.
 flip(arr, size)
 4. Повторить процесс для оставшейся неотсортированной части массива.
-for size in range(n, 1, -1):
+for size in range(n, 1, -1)
+<img width="572" height="638" alt="image" src="https://github.com/user-attachments/assets/26308431-ed8b-469d-b659-c0a070515f55" />
 Особенности:
 Сложность алгоритма — O(n2). Он интересен теоретически и используется как пример
 нестандартных методов сортировки.
@@ -91,6 +92,7 @@ for j in range(max(arr)):
 4. После оседания бусин строки считываются сверху вниз — получается
 отсортированный массив.
 return [row.count(i) for row in beads]
+<img width="524" height="576" alt="image" src="https://github.com/user-attachments/assets/81e035df-3eb8-473a-bc1e-60c75ded6ac1" />
 Особенности:
 Алгоритм применим только для неотрицательных целых чисел. Теоретическая сложность —
 O(n), но практическая — выше из-за ограничения на диапазон и реализацию.
@@ -128,6 +130,7 @@ while arr[prev] < x:
 if arr[prev] == x:
     return prev
 return -1
+<img width="524" height="543" alt="image" src="https://github.com/user-attachments/assets/30a946a4-99fb-4e71-9a48-c13e33ec2ec8" />
 Особенности:
 В среднем сложность поиска O(n).
 Оптимален, когда данные отсортированы и доступ к элементам осуществляется за постоянное
@@ -167,6 +170,7 @@ while low <= high:
     else:
         high = mid - 1
 return -1
+<img width="525" height="556" alt="image" src="https://github.com/user-attachments/assets/21c2d5c5-6fea-45f3-a40f-2a6a56696bee" />
 Особенности:
 Сложность O(log⁡n). Эффективен при поиске в очень больших отсортированных массивах с
 неизвестным размером или частичным доступом.
@@ -200,6 +204,7 @@ elif x > arr[mid2]:
     return ternary_search(arr, mid2 + 1, r, x)
 else:
     return ternary_search(arr, mid1 + 1, mid2 - 1, x)
+<img width="529" height="575" alt="image" src="https://github.com/user-attachments/assets/e2072624-7ac3-4166-9e1f-335118dcede4" />
 Особенности:
 Сложность также O(log⁡n), но число сравнений на шаг выше, чем в двоичном поиске.
 Помимо массивов, тернарный поиск часто используется для нахождения минимума или
