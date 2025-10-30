@@ -1,0 +1,58 @@
+#Block (basket) sorting
+
+def bucket_sort(arr):
+    buckets = [[] for _ in range(len(arr))]
+    for val in arr:
+        index = int(val * len(arr))
+        buckets[index].append(val)
+    for bucket in buckets:
+        bucket.sort()
+    result = []
+    for bucket in buckets:
+        result.extend(bucket)
+    return result
+arr = [0.42, 0.32, 0.23, 0.52, 0.25, 0.47, 0.51]
+print("Исходный массив:", arr)
+sorted_arr = bucket_sort(arr)
+print("Отсортированный массив:", sorted_arr)
+
+#Pancake sorting
+
+def flip(arr, k):
+    arr[:k] = arr[:k][::-1]
+def pancake_sort(arr):
+    n = len(arr)
+    for size in range(n, 1, -1):
+        max_idx = arr.index(max(arr[:size]))
+        if max_idx != size - 1:
+            flip(arr, max_idx + 1)
+            flip(arr, size)
+    return arr
+arr = [3, 6, 1, 7, 4, 2, 5]
+print("Исходный массив:", arr)
+sorted_arr = pancake_sort(arr)
+print("Отсортированный массив:", sorted_arr)
+
+#Sorting by beads (gravitational)
+
+def bead_sort(arr):
+    if any(x < 0 for x in arr):
+        raise ValueError("Bead sort only works with non-negative integers")
+    beads = [[0] * max(arr) for _ in range(len(arr))]
+    for i, val in enumerate(arr):
+        for j in range(val):
+            beads[i][j] = 1
+    for j in range(max(arr)):
+        sum_ = sum(beads[i][j] for i in range(len(arr)))
+        for i in range(len(arr) - 1, len(arr) - sum_ - 1, -1):
+            beads[i][j] = 1
+        for i in range(len(arr) - sum_ - 1, -1, -1):
+            beads[i][j] = 0
+    return [row.count(1) for row in beads]
+
+arr = [5, 3, 1, 7, 4]
+print("Исходный массив:", arr)
+sorted_arr = bead_sort(arr)
+print("Отсортированный массив:", sorted_arr)
+
+
